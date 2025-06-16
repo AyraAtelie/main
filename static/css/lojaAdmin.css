@@ -1,0 +1,32 @@
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: #fff8f0;
+    color: #3b2f2f;
+}
+
+/* Estilização da navbar */
+.navbar {
+    background-color: #8B4513; /* marrom-terroso */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.2rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Título "Produtos" */
+h1 {
+    font-family: 'Exo 2', serif;
+    color: #5a2d0c;
+    text-align: center;
+}

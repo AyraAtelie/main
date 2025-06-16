@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.4rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #3e210d;
+        }
+
+        button {
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #793c11;
+        }
+
+        .links-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .logout, .menu {
+            color: #3e210d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .logout:hover, .menu:hover {
+            color: #793c11;
+            text-decoration: underline;
+        }
+
+        .mensagem {
+            margin: 1rem 0;
+            padding: 0.8rem;
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            input[type="text"], textarea {
+                padding: 0.6rem;
+            }
+
+            button {
+                padding: 0.6rem;
+            }
+        }
+
+        .produtos-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem; /* espaço entre os cards */
+            margin-top: 2rem;
+        }
+
+        .produto-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.07);
+            padding: 2rem 1.5rem;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .produto-card form label {
+            font-weight: bold;
+            margin-top: 1rem;
+            color: #333;
+        }
+
+        .produto-card form input[type="text"],
+        .produto-card form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.4rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .produto-card form button {
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+        }
+
+        .produto-card form button:hover {
+            background-color: #793c11;
+        }
+    </style>
+</head>
+<body>
+    <!-- Teste git -->
+    <div class="container">
+        <h1>Área Administrativa</h1>
+
+        {% with mensagens = get_flashed_messages() %}
+            {% if mensagens %}
+                <div class="mensagem">{{ mensagens[0] }}</div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <label for="titulo_menu">Título do Menu:</label>
+            <input type="text" name="titulo_menu" value="{{ conteudo.titulo_menu }}" class="form-control">
+
+            <label for="texto_sobre">Texto Sobre:</label>
+            <textarea name="texto_sobre" class="form-control">{{ conteudo.texto_sobre }}</textarea>
+
+            <!-- NOVOS CAMPOS -->
+            <label for="sobre_mim">Sobre Mim:</label>
+            <textarea name="sobre_mim" class="form-control">{{ conteudo.sobre_mim }}</textarea>
+
+            <label for="religiao">Minha Religião:</label>
+            <textarea name="religiao" class="form-control">{{ conteudo.religiao }}</textarea>
+
+            <label for="trabalho">Meu Trabalho:</label>
+            <textarea name="trabalho" class="form-control">{{ conteudo.trabalho }}</textarea>
+
+            <button type="submit" class="btn btn-primary mt-2">Salvar Alterações</button>
+        </form>
+        <hr style="margin: 2.5rem 0;">
+
+        <!-- Editar produtos do menu -->
+        <div class="produtos-lista">
+            <h2>Editar Produtos</h2>
+            {% for produto in produtos %}
+                <h3 style="margin-bottom: 0.5rem; margin-top: 2rem;">Produto {{ loop.index }}:</h3>
+                <form method="post" action="{{ url_for('editar_produtoDoMenu', id=produto.id) }}">
+                    <label for="nome-{{ produto.id }}">Nome:</label>
+                    <input type="text" id="nome-{{ produto.id }}" name="nome" value="{{ produto.nome }}">
+                    
+                    <label for="descricao-{{ produto.id }}">Descrição:</label>
+                    <textarea id="descricao-{{ produto.id }}" name="descricao">{{ produto.descricao }}</textarea>
+                    
+                    <label for="preco-{{ produto.id }}">Preço:</label>
+                    <input type="text" id="preco-{{ produto.id }}" name="preco" value="{{ produto.preco }}">
+                    
+                    <button type="submit">Salvar</button>
+                </form>
+                <hr>
+            {% endfor %}
+        </div>
+
+        
+        <div class="links-container">
+            <a class="logout" href="{{ url_for('admin') }}">Sair do painel</a>
+            <a class="menu" href="{{url_for('menu')}}">Menu</a>
+        </div>
+    </div>
+</body>
+</html>
