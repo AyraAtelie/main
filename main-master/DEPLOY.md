@@ -1,3 +1,4 @@
+# teste
 # Guia de Deploy no PythonAnywhere
 
 Este guia fornece instruções passo a passo para hospedar este projeto Flask no PythonAnywhere.
