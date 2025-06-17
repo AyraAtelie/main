@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# SQLite database files
+#*.db
+
+# VS Code settings
+.vscode/
+
+# Environment folders
+env/
+venv/
+ENV/
+.venv/
+*.env
+
+# MacOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# Logs
+*.log
+
+# Flask instance folder (se usar)
+# instance/
+
+# Arquivos temporários de sistema
+*.swp
+*.bak

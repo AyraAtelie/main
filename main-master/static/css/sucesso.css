@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8rem;
+}
+body{
+    background-color: #fff8f0;
+}
+
+h1, h2{
+    color: #3b2f2f;
+}
+
+h2{
+    padding-bottom: 40px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: #3d2b1d;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding-top: 3px;
+    font-size: 1.3rem;
+}
+nav:hover{
+    background-color: #322317;
+    cursor: pointer;
+}

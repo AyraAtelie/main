@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayrá - Contato</title>
+    <link rel="icon" href="{{url_for('static', filename='img/Mulher.png')}}" type="image/png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sankofa+Display&family=Roboto:wght@400;700&family=Open+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/contato.css')}}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Ayrá</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/loja">Loja</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Teste git -->
+
+    <!-- Título -->
+    <div class="container">
+        <div class="titulo">
+            <h1>Fale com o Ayrá</h1>
+        </div>
+
+        <!-- Card do Formulário -->
+        <div class="card mt-4 mb-5 shadow-sm" style="background-color: #f4e7d3; border-radius: 10px;">
+            <div class="card-body">
+                <form action="{{url_for('enviar_contato')}}" method="POST">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn text-white" style="background-color: #8B4513;">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="https://wa.me/5575981079811" class="btn btn-outline-success btn-lg">entrar em contato via WhatsApp</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url_for('static', filename = 'js/contato.js')}}"></script>
+    <footer class="container-fluid text-center text-body-secondary py-3 mt-5">© 2025 Ayrá Ateliê, Inc</footer>
+</body>
+</html>

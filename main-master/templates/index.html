@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ayrá - Menu</title>
+<link href="{{url_for('static', filename = 'img/Mulher.png')}}" rel="icon" type="image/png"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Sankofa+Display&amp;family=Roboto:wght@400;700&amp;family=Open+Sans:wght@300;400;600;700&amp;family=Lato:wght@300;400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{url_for('static', filename = 'css/index.css')}}" rel="stylesheet"/>
+<link href="{{url_for('static', filename = 'css/tabs_custom.css')}}" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+    <style>
+        #entrar_contato a {
+            background-color: #8B4513;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem;
+            border-radius: 7px;
+
+        }
+
+        #entrar_contato :hover {
+            background-color: #5a2d0c;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Teste git -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">Ayrá</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação" class="navbar-toggler bg-light" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+<li class="nav-item"><a class="nav-link" href="{{url_for('loja')}}">Loja</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Admin</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Título -->
+<div class="container my-5">
+<div class="titulo text-center mb-4">
+<h1>{{ conteudo.titulo_menu }}</h1> <!-- DINÂMICO -->
+</div>
+</div>
+<!-- Carrossel -->
+<main>
+<div class="carousel slide" id="carouselExampleCaptions">
+<div class="carousel-indicators">
+<button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleCaptions" type="button"></button>
+<button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions" type="button"></button>
+<button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions" type="button"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active c-item">
+<img alt="..." class="d-block w-100 c-img" src="{{ url_for('static', filename='img/feira banner.jpg')}}"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Conheça o Ayrá</h5>
+<p class="links">Artesanato, qualidade e sustentabilidade</p>
+</div>
+</div>
+<div class="carousel-item c-item">
+<img alt="..." class="d-block w-100 c-img" src="{{url_for('static', filename = 'img/feira cliente.jpg')}}"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Participamos de eventos</h5>
+<p class="links">Parte de nossas vendas são feitas em feiras Afro</p>
+</div>
+</div>
+<div class="carousel-item c-item">
+<img alt="..." class="d-block w-100 c-img" src="{{url_for('static', filename = 'img/feira clientes.jpg')}}"/>
+<div class="carousel-caption d-none d-md-block">
+<h5>Nossos produtos</h5>
+<p class="links">Todos produtos são artesanais feitos com materiais sustentáveis</p>
+</div>
+</div>
+</div>
+<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions" type="button">
+<span aria-hidden="true" class="carousel-control-prev-icon"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions" type="button">
+<span aria-hidden="true" class="carousel-control-next-icon"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+</main>
+
+        <!-- Seção Sobre -->
+    <div class="container">
+    <div class="sobre" id="sobre">
+    <h1>Um pouco sobre Ayrá</h1>
+    <h2>{{ conteudo.texto_sobre }}</h2> <!-- DINÂMICO -->
+    <div class="modal fade">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Detalhes história</h5>
+    <button aria-label="Close" class="btn-close" data-bs-toggle="modal" type="button"></button>
+    </div>
+    <div class="modal-body">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus eos debitis sunt, culpa soluta, eveniet nostrum ea delectus aliquam ipsum atque. Impedit minus in vitae dolorem, laborum fuga hic?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Fechar</button>
+    <button class="btn" id="entrar_contato" type="button"><a href="{{url_for('contato')}}">Entrar em contato</a></button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+<!-- Tabs com ícones -->
+<div class="container my-5">
+<ul class="nav nav-tabs justify-content-center" id="infoTab" role="tablist">
+<li class="nav-item" role="presentation">
+<button class="nav-link active" data-bs-target="#sobre" data-bs-toggle="tab" id="sobre-tab" role="tab" type="button">
+<i class="bi bi-person"></i> <p>Sobre Mim</p>
+            </button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" data-bs-target="#religiao" data-bs-toggle="tab" id="religiao-tab" role="tab" type="button">
+<i class="bi bi-stars"></i> <p>Valores</p>
+            </button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" data-bs-target="#trabalho" data-bs-toggle="tab" id="trabalho-tab" role="tab" type="button">
+<i class="bi bi-briefcase"></i> <p>Meu Trabalho</p>
+            </button>
+</li>
+</ul>
+<div class="tab-content border border-top-0 p-4 bg-light rounded-bottom shadow-sm" id="infoTabContent">
+    <div class="tab-pane fade show active" id="sobre" role="tabpanel">
+        <p>{{ conteudo.sobre_mim }}</p>
+    </div>
+    <div class="tab-pane fade" id="religiao" role="tabpanel">
+        <p>{{ conteudo.religiao }}</p>
+    </div>
+    <div class="tab-pane fade" id="trabalho" role="tabpanel">
+        <p>{{ conteudo.trabalho }}</p>
+    </div>
+
+</div>
+</div>
+
+   <!-- loja com 3 produtos principais -->
+   <div class="modal fade" tabindex="-1" id="detalhes-loja">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalhes do produto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ducimus eos debitis sunt, culpa soluta, eveniet nostrum ea delectus aliquam ipsum atque. Impedit minus in vitae dolorem, laborum fuga hic?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn" id="entrar_contato" ><a href="https://wa.me/5575981079811?text=Ol%C3%A1%2C%20me%20interessei%20pelo%20seu%20produto!" target="_blank">Entrar em contato</a></button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <section id="produtos" class="my-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Produtos em destaque</h2>
+        <div class="row justify-content-center">
+        {% for produto in produtos_destaque %}
+        <div class="col-12 col-sm-5 col-lg-3 mb-4 d-flex align-items-stretch">
+            <div class="card h-100 shadow-sm">
+            <img src="{{ url_for('static', filename=produto.imagem) }}" alt="{{ produto.nome }}" class="card-img-top img-fluid">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ produto.nome }}</h5>
+                <p class="card-text">{{ produto.descricao }}</p>
+                <p class="card-text fw-bold">Preço: R$ {{ produto.preco }}</p>
+                <a href="#" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#detalhes-loja">Ver detalhes</a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    </section>
+    <div class="container text-center">
+        <a href="{{ url_for('loja') }}" class="btn btn-outline-dark btn-lg" id="botaolink">Ir para a loja</a>
+        <a href="https://wa.me/5575981079811" class="btn btn-outline-dark btn-lg" id="botaolink">Entrar em contato</a>
+    </div>
+    <br><br>
+<!-- Footer Ayrá -->
+<footer>
+<div class="container">
+<div class="row">
+<!-- Coluna 1 -->
+<div class="col-md-4 mb-3">
+<h5 class="fw-bold">Ayrá</h5>
+<p class="links">Moda feita à mão com afeto e autenticidade.</p>
+</div>
+<!-- Coluna 2 -->
+<div class="col-md-4 mb-3">
+<h5 class="fw-bold">Links</h5>
+<ul class="list-unstyled">
+<li><a href="{{ url_for('menu') }}">Sobre</a></li>
+<li><a href="{{ url_for('loja') }}">Loja</a></li>
+<li><a href="{{ url_for('contato') }}">Contato</a></li>
+</ul>
+</div>
+<!-- Coluna 3 -->
+<div class="col-md-4 mb-3">
+<h5 class="fw-bold">Contato</h5>
+<p class="links"><i class="bi bi-telephone-fill"></i> +55 75 98107-9811</p>
+<p class="links"><i class="bi bi-envelope-fill"></i> ayraateliediantonia@gmail.com</p>
+<div class="social-icons">
+<a class="me-2" href="https://www.instagram.com/ayraatelie_de_antonia/"><i class="bi bi-instagram"></i></a>
+<a href="#"><i class="bi bi-facebook"></i></a>
+</div>
+</div>
+</div>
+<!-- Divisor e Direitos -->
+<div class="footer-divider"></div>
+<div class="text-center pt-3">
+<small>© 2025 Ayrá Ateliê. Todos os direitos reservados.</small>
+</div>
+</div>
+</footer>
+<!-- Bootstrap JS (opcional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
