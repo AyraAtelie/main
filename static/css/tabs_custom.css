@@ -1,0 +1,41 @@
+
+/* Estilo para abas personalizadas */
+.nav-tabs .nav-link {
+    color: #8B4513;
+    font-weight: bold;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.links{
+    color: white;
+}
+
+li, i, p{
+    color: #4a3c2f;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #A0522D;
+    border-bottom: 3px solid #d2b48c;
+}
+
+.social-icons{
+    color: white;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #fff;
+    color: #8B4513;
+    border-bottom: 3px solid #8B4513;
+    font-weight: 700;
+}
+
+.tab-content {
+    background-color: #fff8f0;
+    border-radius: 0 0 10px 10px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #4a3c2f;
+}

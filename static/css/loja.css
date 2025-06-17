@@ -1,0 +1,112 @@
+/* Fonte geral e cor de fundo */
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: #fff8f0;
+    color: #3b2f2f;
+}
+
+/* Estilização da navbar */
+.navbar {
+    background-color: #8B4513; /* marrom-terroso */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.2rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Título "Produtos" */
+h1 {
+    font-family: 'Exo 2', serif;
+    color: #5a2d0c;
+    text-align: center;
+}
+
+/* Cards de produto */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(91, 57, 34, 0.2);
+}
+.navbar {
+    background-color: #8B4513;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* garante que fique acima de outros elementos */
+}
+
+body {
+    padding-top: 80px; /* altura da navbar para evitar que sobreponha os cards */
+    font-family: 'Exo 2', sans-serif;
+    background-color: #fff8f0;
+    color: #3b2f2f;
+}
+
+.row {
+    justify-content: center; /* centraliza os col-lg */
+    gap: 20px; /* espaçamento entre colunas */
+}
+
+.card {
+    width: 18rem;
+    margin: auto; /* centraliza cada card dentro da coluna */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(91, 57, 34, 0.2);
+}
+
+
+.card-title {
+    color: #5a2d0c;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    color: #3b2f2f;
+}
+
+/* Botão "Ver detalhes" */
+.card .btn {
+    background-color: #8B4513;
+    border: none;
+}
+
+.card .btn:hover {
+    background-color: #A0522D;
+}
+
+/* Rodapé (se for usar no futuro) */
+footer {
+    padding: 100px;
+    margin: auto;
+}
+
+/* Ajustes para layout responsivo */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+}

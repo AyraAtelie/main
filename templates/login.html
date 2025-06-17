@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="{{url_for('static', filename = 'img/Mulher.png')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff8f0; /* fundo claro */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            color: #5a2d0c; /* marrom escuro */
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background: #f4e7d3; /* bege claro */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form label {
+            margin-bottom: 0.5rem;
+            color: #3b2f2f;
+            font-weight: bold;
+        }
+
+        .form input {
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #d0bfae;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #fff8f0;
+            color: #3b2f2f;
+        }
+
+        .form input:focus {
+            outline: none;
+            border-color: #8B4513;
+            box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.2);
+        }
+
+        button {
+            background-color: #8B4513;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5a2d0c;
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .form {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .form input {
+                padding: 0.6rem;
+            }
+
+            button {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+        .mensagem {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .btn{
+            background-color: #8B4513;
+            color: #fff;
+        }
+        .btn:hover{
+            background-color: #5a2d0c;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Teste git -->
+    <div class="container">
+        <h1>Admin</h1>
+        {% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        <div class="mensagem">{{ mensagens[0] }}</div>
+    {% endif %}
+    {% endwith %}
+
+
+        <form action="/enviar-login" method="POST" class="form">
+            <label for="email-login">Usuário (email)</label>
+            <input type="email" name="email-login" id="email-login" placeholder="exemplo@gmail.com" required>
+            
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+
+            <div class="d-grid gap-3 mt-2">
+                <button type="submit" class="btn btn-botao btn-lg rounded-pill">Entrar</button>
+                <a class="btn btn-menu btn-lg rounded-pill" href="{{url_for('menu')}}">Menu</a>
+            </div>    
+        </form>
+    </div>
+</body>
+</html>

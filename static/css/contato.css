@@ -1,0 +1,63 @@
+/* <!-- Teste git --> */
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: #fff8f0;
+    color: #3b2f2f;
+}
+
+.navbar {
+    background-color: #8B4513;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-family: 'Exo 2', serif;
+    font-size: 1.8rem;
+}
+
+.titulo h1 {
+    font-family: 'Exo 2', serif;
+    color: #5a2d0c;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+form label {
+    font-weight: 600;
+    color: #5a2d0c;
+}
+
+form input,
+form textarea {
+    background-color: #fff8f0;
+    border: 1px solid #d0bfae;
+    color: #3b2f2f;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #8B4513;
+    box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+}
+
+button[type="submit"] {
+    background-color: #8B4513;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a2d0c;
+}
+
+footer {
+    padding: 100px 0;
+}
+textarea{
+    resize: none;
+}
